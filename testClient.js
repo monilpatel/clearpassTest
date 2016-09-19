@@ -14,6 +14,7 @@ function submit(){
       url: "https://access.cns.vt.edu/api/oauth", 
       data: JSON.stringify({grant_type: "password", username: username, password: password, client_id:"TestClient" }),
       type:"POST",
+      dataType:"jsonp",
       success: function(response){
           console.log(response);
       }
