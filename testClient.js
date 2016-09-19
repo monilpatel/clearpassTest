@@ -9,10 +9,12 @@ function submit(){
 //    document.getElementById("demo").innerHTML = xhttp.responseText;
 
   $.ajax({
+      headers:{
+        'Content-type': "application/json"
+      },
       url: "https://access.cns.vt.edu/api/oauth", 
       data: {grant_type: "password", username: username, password: password, client_id:"TestClient" },
       type:"POST",
-      beforeSend: function(xhr){xhr.setRequestHeader('Content-type', 'application/json')}, 
       success: function(){
           alert("success");
       }
