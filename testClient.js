@@ -9,15 +9,13 @@ function submit(){
 //    document.getElementById("demo").innerHTML = xhttp.responseText;
 
   $.ajax({
-      headers:{
-        'Content-type': "application/json"
-      },
-      crossDomain: true;
+      contentType: "application/json",
+      crossDomain: true,
       url: "https://access.cns.vt.edu/api/oauth", 
-      data: {grant_type: "password", username: username, password: password, client_id:"TestClient" },
+      data: JSON.stringify({grant_type: "password", username: username, password: password, client_id:"TestClient" }),
       type:"POST",
-      success: function(){
-          alert("success");
+      success: function(response){
+          console.log(response);
       }
   })
 
