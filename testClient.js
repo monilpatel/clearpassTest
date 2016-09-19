@@ -12,6 +12,7 @@ function submit(){
       headers:{
         'Content-type': "application/json"
       },
+      crossDomain: true;
       url: "https://access.cns.vt.edu/api/oauth", 
       data: {grant_type: "password", username: username, password: password, client_id:"TestClient" },
       type:"POST",
