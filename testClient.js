@@ -19,7 +19,9 @@ function submit() {
         }
         , type: "POST"
         , dataType: "jsonp"
-        , success: readData(data)
+        , success: function(data){
+            console.log(data);
+        }
         , error: function (xhr, ajaxOptions, thrownError) {
             alert(xhr.status);
             alert(thrownError);
