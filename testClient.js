@@ -18,15 +18,16 @@ function submit() {
             , client_id: "TestClient"
         }
         , type: "POST"
-        , dataType: "jsonp"
         , success: function(data){
             console.log(data);
         }
         , error: function (xhr, ajaxOptions, thrownError) {
-            alert(xhr.status);
-            alert(thrownError);
+            console.log(xhr.status);
+            console.log(ajaxOptions);
+            console.log(thrownError);
         }
     })
+    
 
 
 }
